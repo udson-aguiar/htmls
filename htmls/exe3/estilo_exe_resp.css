@@ -1,0 +1,259 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,500;1,400&family=Source+Code+Pro&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,500;1,400&family=Roboto:wght@500&family=Source+Code+Pro&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Ibarra Real Nova', serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* body {
+    background-color: yellow;
+} */
+
+body, ul, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    /* background-image: linear-gradient(yellow, red); */
+    background-color: rgba(255,255,255,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li {
+    margin-left: 5px;
+    padding: 2px;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px;
+    /*para ver a áera de clique
+    background-color: tomato;*/
+    /*criar os botões, se quiser:
+    background-color: rgba(215, 245, 250, 0.4);
+    border-radius: 5%;
+    color: #ffffff;*/
+    font-family: 'Roboto', serif;
+    text-transform: uppercase;
+    color: gray;
+    font-size: 1rem;
+    font-weight: 800;
+    /* definimos essa posição para que o :after seja absoluto,
+       mas só nesse elemento e não em seu container */
+    position: relative;
+}
+
+.menu li a:hover {
+    color: black;
+}
+
+.menu li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* chave do efeito, vai passar de 0% para 100% e
+       mostrar o background quando isso ocorrer */
+    width: 0%;
+    content: '.';
+    /* transparente para não aparecer nada, só o background */
+    color: transparent;
+    background: black;
+    /* altura de 1px para só aparecer uma linha
+       (inclusive, para esconder o ponto): */
+    height: 1px;
+    /* para ocorrer o efeito de deslizar a barra */
+    transition: all .5s;
+    /* efeito adaptado de https://www.sliderrevolution.com/resources/css-button-hover-effects/ */
+}
+.menu li a:hover:after {
+    /* chave do efeito, passando de 0% para 100% e, então,
+       mostrando o background de 1px de altura */
+    width: 100%;
+}
+
+.box1 {
+    background-image: linear-gradient(red, yellow);
+    padding-top: 5px;;
+}
+
+.aboutme {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto;
+    background-image: url('../imgs/new_goku.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 600px;
+    padding-top: 400px;
+}
+
+.aboutme > div {
+    width: 400px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    grid-column: 2/5;
+    background-color: white;
+    border-radius: 0.5%;
+    border: 1px solid rgba(150, 150, 150, 0.5);
+    padding: 0 10px;
+}
+
+.aboutme > div > h3 {
+    margin: 10px 0;
+    font-family: inherit;
+}
+
+.aboutme > div > p {
+    text-align: left;
+    font-family: inherit;
+    font-style: italic;
+}
+
+.box2 {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    width: 90%;
+    margin: 140px auto 20px auto;
+    border-radius: 0.5%;
+    /* border: 1px solid rgba(150, 150, 150, 0.5); */
+    padding: 10px;
+}
+
+.box2 > h3 {
+    margin: 2px 0 10px 0;
+    padding: 0;
+}
+
+.box2 > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.box2 > div > div {
+    background-image: url(../imgs/adv/x.svg);
+    /* background-position: center; */
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.box2 > div > div > img {
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+}
+
+.box2 > div > div > img:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    transform: scale(1.01);
+    box-shadow: 2px 2px gray;
+    opacity: 1.0;
+    
+}
+
+.box2:after {
+    content: "\2795";
+    font-size: 10px;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid rgba(255,0,0,0.2);
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    background-image: radial-gradient(yellow, rgb(247, 193, 193));
+}
+
+.box3 {
+    display: grid;
+    row-gap: 20px;
+    width: 100%;
+    /* background-image: linear-gradient(yellow, red); */
+    padding: 20px 0;
+    margin: 30px 0;
+}
+
+.box3 > div > h4 {
+    padding-left: 3px;
+}
+.box3 > div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.box3 form {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.box3 input[type]:not([type=submit]) {
+    font-size: 1.2rem;
+    border: none;
+    padding: 18px 0 0 4px;
+    background-color: rgba(0,0,0,0);
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.box3 input[type]:not([type=submit]):focus {
+    outline: none;
+}
+
+.box3 input[type]:not([type=submit])::placeholder {
+    color: black;
+    font-style: italic;
+    color: rgb(184, 169, 169);
+}
+
+.box3 input[type=submit] {
+    background-image: radial-gradient(yellow, rgb(247, 193, 193));
+    border: none;
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    line-height: 48px;
+}
+
+.box3 input[type=submit]:hover {
+    color: red;
+}
